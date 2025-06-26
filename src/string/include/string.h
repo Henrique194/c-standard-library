@@ -20,6 +20,23 @@ typedef unsigned int size_t;
 
 
 /**
+ * Appends a copy of the null-terminated byte string pointed to by \p src to the
+ * end of the null-terminated byte string pointed to by \p dest. The character
+ * \c src[0] replaces the null terminator at the end of \p dest. The resulting
+ * byte string is null-terminated.
+ * The behavior is undefined if the destination array is not large enough for
+ * the contents of both \p src and \p dest and the terminating null character.
+ * The behavior is undefined if the strings overlap. The behavior is undefined
+ * if either \p dest or \p src is not a pointer to a null-terminated byte
+ * string.
+ *
+ * @param dest - pointer to the null-terminated byte string to append to
+ * @param src - pointer to the null-terminated byte string to copy from
+ * @return a copy of \p dest
+ */
+char* strcat(char* dest, const char* src);
+
+/**
  * Copies the null-terminated byte string pointed to by \p src, including the
  * null terminator, to the character array whose first element is pointed to by
  * \p dest.
