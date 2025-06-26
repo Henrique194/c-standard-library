@@ -36,6 +36,30 @@ typedef unsigned int size_t;
 char* strcpy(char* dest, const char* src);
 
 /**
+ * Copies at most \p count characters of the character array pointed to by
+ * \p src (including the terminating null character, but not any of the
+ * characters that follow the null character) to character array pointed to by
+ * \p dest.
+ * If \p count is reached before the entire array \p src was copied, the
+ * resulting character array is not null-terminated.
+ * If, after copying the terminating null character from \p src, \p count is not
+ * reached, additional null characters are written to \p dest until the total of
+ * \p count characters have been written.
+ *
+ * The behavior is undefined if the character arrays overlap, if either \p dest
+ * or \p src is not a pointer to a character array (including if \p dest or
+ * \p src is a null pointer), if the size of the array pointed to by \p dest is
+ * less than count, or if the size of the array pointed to by \p src is less
+ * than count and it does not contain a null character.
+ *
+ * @param dest - pointer to the character array to copy to
+ * @param src - pointer to the character array to copy from
+ * @param count - maximum number of characters to copy
+ * @return a copy of dest
+ */
+char* strncpy(char* dest, const char* src, size_t count);
+
+/**
  * Returns the length of the given null-terminated byte string, that is, the
  * number of characters in a character array whose first element is pointed to
  * by str up to and not including the first null character.
