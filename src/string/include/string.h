@@ -45,4 +45,21 @@ char* strcpy(char* dest, const char* src);
  */
 size_t strlen(const char* str);
 
+/**
+ * Compares two null-terminated byte strings lexicographically.
+ *
+ * The sign of the result is the sign of the difference between the values of
+ * the first pair of characters (both interpreted as unsigned char) that differ
+ * in the strings being compared.
+ *
+ * The behavior is undefined if \p lhs or \p rhs are not pointers to
+ * null-terminated byte strings.
+ *
+ * @param lhs, rhs - pointers to the null-terminated byte strings to compare
+ * @return Negative value if \p lhs appears before \p rhs in lexicographical
+ *         order. Zero if \p lhs and \p rhs compare equal. Positive value if
+ *         \p lhs appears after \p rhs in lexicographical order.
+ */
+int strcmp(const char* lhs, const char* rhs);
+
 #endif
