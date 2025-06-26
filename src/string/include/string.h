@@ -24,6 +24,7 @@ typedef unsigned int size_t;
  * end of the null-terminated byte string pointed to by \p dest. The character
  * \c src[0] replaces the null terminator at the end of \p dest. The resulting
  * byte string is null-terminated.
+ *
  * The behavior is undefined if the destination array is not large enough for
  * the contents of both \p src and \p dest and the terminating null character.
  * The behavior is undefined if the strings overlap. The behavior is undefined
@@ -35,6 +36,28 @@ typedef unsigned int size_t;
  * @return a copy of \p dest
  */
 char* strcat(char* dest, const char* src);
+
+/**
+ *  Appends at most \p count characters from the character array pointed to by
+ *  \p src, stopping if the null character is found, to the end of the
+ *  null-terminated byte string pointed to by \p dest. The character \c src[0]
+ *  replaces the null terminator at the end of \p dest. The terminating null
+ *  character is always appended in the end (so the maximum number of bytes the
+ *  function may write is count+1).
+ *
+ *  The behavior is undefined if the destination array does not have enough
+ *  space for the contents of both \p dest and the first count characters of
+ *  \p src, plus the terminating null character. The behavior is undefined if
+ *  the source and destination objects overlap. The behavior is undefined if
+ *  either \p dest is not a pointer to a null-terminated byte string or \p src
+ *  is not a pointer to a character array.
+ *
+ * @param dest - pointer to the null-terminated byte string to append to
+ * @param src - pointer to the character array to copy from
+ * @param count - maximum number of characters to copy
+ * @return a copy of dest
+ */
+char* strncat(char* dest, const char* src, size_t count);
 
 /**
  * Copies the null-terminated byte string pointed to by \p src, including the
