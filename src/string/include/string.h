@@ -38,6 +38,23 @@ typedef unsigned int size_t;
 char* strcat(char* dest, const char* src);
 
 /**
+ * Finds the first occurrence of \p ch (after conversion to char as if by
+ * \c (char)ch ) in the null-terminated byte string pointed to by \p str (each
+ * character interpreted as unsigned char). The terminating null character is
+ * considered to be a part of the string and can be found when searching for
+ * \c '\0' .
+ *
+ * The behavior is undefined if \p str is not a pointer to a null-terminated
+ * byte string.
+ *
+ * @param str - pointer to the null-terminated byte string to be analyzed
+ * @param ch - character to search for
+ * @return Pointer to the found character in \p str , or null pointer if no such
+ *         character is found.
+ */
+char* strchr(const char* str, int ch);
+
+/**
  *  Appends at most \p count characters from the character array pointed to by
  *  \p src, stopping if the null character is found, to the end of the
  *  null-terminated byte string pointed to by \p dest. The character \c src[0]

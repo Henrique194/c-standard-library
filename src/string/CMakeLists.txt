@@ -1,5 +1,6 @@
 add_library(string STATIC
     strcat.c
+    strchr.c
     strcmp.c
     strcpy.c
     strlen.c
