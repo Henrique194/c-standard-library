@@ -7,6 +7,7 @@ add_library(string STATIC
     strncat.c
     strncmp.c
     strncpy.c
+    strrchr.c
 )
 
 target_include_directories(string PUBLIC "./include")
