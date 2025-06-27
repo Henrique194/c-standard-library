@@ -180,4 +180,20 @@ int strncmp(const char* lhs, const char* rhs, size_t count);
  */
 char* strrchr(const char* str, int ch);
 
+/**
+ * Returns the length of the maximum initial segment (span) of the
+ * null-terminated byte string pointed to by \p dest, that consists of only the
+ * characters found in the null-terminated byte string pointed to by \p src.
+ *
+ * The behavior is undefined if either \p dest or \p src is not a pointer to a
+ * null-terminated byte string.
+ *
+ * @param dest - pointer to the null-terminated byte string to be analyzed
+ * @param src - pointer to the null-terminated byte string that contains the
+ *              characters to search for
+ * @return The length of the maximum initial segment that contains only
+ *         characters from the null-terminated byte string pointed to by \p src.
+ */
+size_t strspn(const char* dest, const char* src);
+
 #endif
