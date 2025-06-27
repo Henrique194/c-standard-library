@@ -126,4 +126,24 @@ size_t strlen(const char* str);
  */
 int strcmp(const char* lhs, const char* rhs);
 
+/**
+ * Compares at most \p count characters of two possibly null-terminated arrays.
+ * The comparison is done lexicographically. Characters following the null
+ * character are not compared. The sign of the result is the sign of the
+ * difference between the values of the first pair of characters (both
+ * interpreted as unsigned char) that differ in the arrays being compared.
+ *
+ * The behavior is undefined when access occurs past the end of either array
+ * \p lhs or \p rhs . The behavior is undefined when either \p lhs or \p rhs
+ * is the null pointer.
+ *
+ * @param lhs, rhs - pointers to the possibly null-terminated arrays to compare
+ * @param count - maximum number of characters to compare
+ * @return Negative value if \p lhs appears before \p rhs in lexicographical
+ *         order. Zero if \p lhs and \p rhs compare equal, or if \p count is
+ *         zero. Positive value if \p lhs appears after \p rhs in
+ *         lexicographical order.
+ */
+int strncmp(const char* lhs, const char* rhs, size_t count);
+
 #endif

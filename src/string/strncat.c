@@ -2,7 +2,7 @@
 
 char* strncat(char* dest, const char* src, size_t count) {
     char* ret = dest;
-    if (count <= 0) {
+    if (count == 0) {
         return ret;
     }
     dest += strlen(dest);
